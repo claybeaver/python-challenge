@@ -58,3 +58,12 @@ print(f'Average Change: ${round((last_balance - starting_balance) / (num_rows - 
 print(f'Greatest Increase in Profits: {greatest_prof_date} (${greatest_prof})')
 print(f'Greatest Decrease in Profits: {greatest_loss_date} (${greatest_loss})')
 
+# Data Output into Text File
+with open("OutputAnalysis.txt", "a") as f:
+    print("Financial Analysis", file=f)
+    print("----------------------------", file=f)
+    print(f'Total Months: {num_rows}', file=f)
+    print(f'Total: ${total_pnl}', file=f)
+    print(f'Average Change: ${round((last_balance - starting_balance) / (num_rows - 1), 2)}', file=f)
+    print(f'Greatest Increase in Profits: {greatest_prof_date} (${greatest_prof})', file=f)
+    print(f'Greatest Decrease in Profits: {greatest_loss_date} (${greatest_loss})', file=f)
