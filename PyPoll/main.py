@@ -3,8 +3,10 @@ import os
 import csv
 
 # Variables
-row_vote = 0
 vote_total = 0
+cand_name = ""
+cand_list = []
+cand_total = 0
 
 # Import election_data.csv
 # Set path for file
@@ -20,6 +22,25 @@ with open(election_data_path, 'r') as csvfile:
     for row in csvreader:
         # Set row_vote equal to the first vote
         vote_total += 1
-    
-print(f'Total Votes: {vote_total}')
+        # Compile the list of candidates
+        if str(row[2]) not in cand_list:
+            cand_list.append(str(row[2]))
+            cand_total += 1
+        # Calculate % of votes each candidate won
 
+
+
+
+
+print("Election Results")
+print("------------------------")
+print(f'Total Votes: {vote_total}')
+print("------------------------")
+# for cand_name in cand_list[0]:
+#     print(cand_name,end='')
+# for cand_name in cand_list[1]:
+#     print(cand_name,end='')
+# for cand_name in cand_list[2]:
+#     print(cand_name,end='')
+# for cand_name in cand_list[3]:
+#     print(cand_name,end='')
